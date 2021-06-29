@@ -5,6 +5,7 @@
 
 #include "Table/Cell/StringCell.h"
 #include "Table/Cell/NumberCell.h"
+#include "Table/Cell/DateCell.h"
 
 using namespace std;
 
@@ -17,7 +18,8 @@ int main()
 	{
 		for (int k = 0; k < col; k++)
 		{
-			table.Set(new NumberCell((i * col + k) * 10), i, k);
+			DateCell* cell = new DateCell("1970-01-02");
+			table.Set(cell, i, k);
 		}
 	}
 

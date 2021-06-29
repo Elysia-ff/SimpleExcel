@@ -42,6 +42,9 @@
     <ClCompile Include="src\Table\Cell\NumberCell.cpp">
       <Filter>Source Files\Table\Cell</Filter>
     </ClCompile>
+    <ClCompile Include="src\Table\Cell\DeteCell.cpp">
+      <Filter>Source Files\Table\Cell</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Table\Table.h">
@@ -55,6 +58,12 @@
     </ClInclude>
     <ClInclude Include="src\Table\Cell\NumberCell.h">
       <Filter>Header Files\Table\Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table\Cell\DateCell.h">
+      <Filter>Header Files\Table\Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Utility.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
