@@ -153,11 +153,13 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\Table\Cell\Cell.cpp" />
+    <ClCompile Include="src\Table\Cell\NumberCell.cpp" />
     <ClCompile Include="src\Table\Cell\StringCell.cpp" />
     <ClCompile Include="src\Table\Table.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Table\Cell\Cell.h" />
+    <ClInclude Include="src\Table\Cell\NumberCell.h" />
     <ClInclude Include="src\Table\Cell\StringCell.h" />
     <ClInclude Include="src\Table\Table.h" />
   </ItemGroup>

@@ -4,6 +4,7 @@
 #include "Table/Table.h"
 
 #include "Table/Cell/StringCell.h"
+#include "Table/Cell/NumberCell.h"
 
 using namespace std;
 
@@ -14,10 +15,9 @@ int main()
 	Table table(row, col);
 	for (int i = 0; i < row; i++)
 	{
-		std::string input(static_cast<size_t>(i) + 1, 'a' + i);
 		for (int k = 0; k < col; k++)
 		{
-			table.Set(new StringCell(input), i, k);
+			table.Set(new NumberCell((i * col + k) * 10), i, k);
 		}
 	}
 
