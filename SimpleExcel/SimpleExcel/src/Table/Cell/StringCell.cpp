@@ -1,12 +1,14 @@
 #include "StringCell.h"
 
-StringCell::StringCell(const std::string& _data)
-	: Cell(_data)
+StringCell::StringCell(const Table* _table, const std::string& _str)
+	: Cell(_table)
+	, str(_str)
 {
 }
 
-StringCell::StringCell(std::string&& _data)
-	: Cell(std::move(_data))
+StringCell::StringCell(const Table* _table, std::string&& _str)
+	: Cell(_table)
+	, str(std::move(_str))
 {
 }
 
@@ -15,7 +17,12 @@ Cell* StringCell::DeepCopy() const
 	return new StringCell(*this);
 }
 
-int StringCell::ToInt() const
+std::string StringCell::ToString() const
 {
-	return 0;
+	return str;
+}
+
+Int StringCell::ToInt() const
+{
+	return Int{ 0, EErrorCode::NONE };
 }

@@ -152,15 +152,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\Table\Cell\Cell.cpp" />
     <ClCompile Include="src\Table\Cell\DeteCell.cpp" />
+    <ClCompile Include="src\Table\Cell\ExprCell.cpp" />
     <ClCompile Include="src\Table\Cell\NumberCell.cpp" />
     <ClCompile Include="src\Table\Cell\StringCell.cpp" />
     <ClCompile Include="src\Table\Table.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ErrorCode.h" />
+    <ClInclude Include="src\StrongType\Int.h" />
     <ClInclude Include="src\Table\Cell\Cell.h" />
     <ClInclude Include="src\Table\Cell\DateCell.h" />
+    <ClInclude Include="src\Table\Cell\ExprCell.h" />
     <ClInclude Include="src\Table\Cell\NumberCell.h" />
     <ClInclude Include="src\Table\Cell\StringCell.h" />
     <ClInclude Include="src\Table\Table.h" />

@@ -1,0 +1,45 @@
+#pragma once
+
+#include <vector>
+#include <unordered_map>
+
+#include "Cell.h"
+
+class ExprCell : public Cell
+{
+public:
+	ExprCell() = delete;
+
+	ExprCell(const Table* _table, const std::string& _expr);
+
+	ExprCell(const ExprCell& source) = default;
+
+	ExprCell(ExprCell&& source) noexcept = default;
+
+	virtual ~ExprCell() = default;
+
+	ExprCell& operator=(const ExprCell& source) = default;
+
+	ExprCell& operator=(ExprCell&& source) noexcept = default;
+
+	virtual Cell* DeepCopy() const override;
+
+	virtual std::string ToString() const override;
+
+	virtual Int ToInt() const override;
+
+private:
+	// remove white characters, capitalize, replace '{', '[' to '(' 
+	std::string normalize(const std::string& str) const;
+
+	std::vector<std::string> split(const std::string& str) const;
+
+	std::vector<std::string> toPostfix(const std::vector<std::string>& infix) const;
+
+private:
+	std::string expr;
+
+	static std::unordered_map<EErrorCode, std::string> ErrorStr;
+
+	static std::unordered_map<char, int> OperatorPriorities;
+};

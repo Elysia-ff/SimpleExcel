@@ -7,7 +7,7 @@ class NumberCell : public Cell
 public:
 	NumberCell() = delete;
 
-	NumberCell(int _data);
+	NumberCell(const Table* _table, int _num);
 
 	NumberCell(const NumberCell& source) = default;
 
@@ -21,5 +21,10 @@ public:
 
 	virtual Cell* DeepCopy() const override;
 
-	virtual int ToInt() const;
+	virtual std::string ToString() const override;
+
+	virtual Int ToInt() const override;
+
+private:
+	int num;
 };

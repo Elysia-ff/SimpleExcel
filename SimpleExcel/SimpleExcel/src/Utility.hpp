@@ -71,4 +71,53 @@ public:
 
 		return false;
 	}
+
+	static bool IsAlpha(char c)
+	{
+		return c >= 'A' && c <= 'Z';
+	}
+
+	static bool IsNumber(char c)
+	{
+		return c >= '0' && c <= '9';
+	}
+
+	static bool IsNumber(const std::string& str, int idx = 0)
+	{
+		for (size_t i = idx; i < str.size(); i++)
+		{
+			if (!IsNumber(str[i]))
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	static bool IsCell(const std::string& cell)
+	{
+		if (cell.size() < 2)
+		{
+			return false;
+		}
+
+		if (!IsAlpha(cell[0]))
+		{
+			return false;
+		}
+
+		return IsNumber(cell, 1);
+	}
+
+	static void ParseRowCol(const std::string& cell, int* outRow, int* outCol)
+	{
+		assert(outRow);
+		assert(outCol);
+		assert(cell.size() >= 2);
+
+		// TODO :: only works when 0 <= col <= 25 (A ~ Z) for now 
+		*outCol = cell[0] - 'A';
+		*outRow = atoi(cell.c_str() + 1) - 1;
+	}
 };

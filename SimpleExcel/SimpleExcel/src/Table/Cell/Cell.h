@@ -2,14 +2,16 @@
 
 #include <string>
 
+#include "StrongType/Int.h"
+
+class Table;
+
 class Cell
 {
 public:
-	Cell() = default;
+	Cell() = delete;
 
-	Cell(const std::string& _data);
-
-	Cell(std::string&& _data);
+	Cell(const Table* _table) : table(_table) {}
 
 	Cell(const Cell& source) = default;
 
@@ -23,13 +25,10 @@ public:
 
 	virtual Cell* DeepCopy() const = 0;
 
-	inline const std::string& ToString() const
-	{
-		return data;
-	}
+	virtual std::string ToString() const = 0;
 
-	virtual int ToInt() const = 0;
+	virtual Int ToInt() const = 0;
 
-private:
-	std::string data;
+protected:
+	const Table* table;
 };

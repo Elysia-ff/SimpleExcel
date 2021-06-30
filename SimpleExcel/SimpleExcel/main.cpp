@@ -6,24 +6,23 @@
 #include "Table/Cell/StringCell.h"
 #include "Table/Cell/NumberCell.h"
 #include "Table/Cell/DateCell.h"
+#include "Table/Cell/ExprCell.h"
 
 using namespace std;
 
 int main()
 {
-	int row = 6;
-	int col = 4;
+	int row = 1;
+	int col = 5;
 	Table table(row, col);
-	for (int i = 0; i < row; i++)
-	{
-		for (int k = 0; k < col; k++)
-		{
-			DateCell* cell = new DateCell("1970-01-02");
-			table.Set(cell, i, k);
-		}
-	}
 
-	cout << table.ToString() << endl;
+	table.Set(new NumberCell(&table, 10), 0, 0);
+	table.Set(new NumberCell(&table, 11), 0, 1);
+	table.Set(new NumberCell(&table, 12), 0, 2);
+	table.Set(new ExprCell(&table, "(A1 + B1 + C1) * 100 / 2 - 10"), 0, 3);
+	table.Set(new ExprCell(&table, "3 / 0"), 0, 4);
+
+	cout << table.ToString();
 
 	return 0;
 }

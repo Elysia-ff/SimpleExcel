@@ -7,9 +7,7 @@ class DateCell : public Cell
 public:
 	DateCell() = delete;
 
-	DateCell(const std::string& _data);
-
-	DateCell(std::string&& _data);
+	DateCell(const Table* _table, const std::string& data);
 
 	DateCell(const DateCell& source) = default;
 
@@ -23,5 +21,17 @@ public:
 
 	virtual Cell* DeepCopy() const override;
 
-	virtual int ToInt() const override;
+	virtual std::string ToString() const override;
+
+	virtual Int ToInt() const override;
+
+private:
+	void parse(const std::string& str);
+
+private:
+	int year;
+
+	int month;
+
+	int day;
 };

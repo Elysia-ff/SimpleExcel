@@ -25,6 +25,9 @@
     <Filter Include="Source Files\Table\Cell">
       <UniqueIdentifier>{ab4df9c0-8872-46ab-9c75-4c6d7c8ec252}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\StrongType">
+      <UniqueIdentifier>{4d357f40-f167-49ac-a271-56709379638e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -33,9 +36,6 @@
     <ClCompile Include="src\Table\Table.cpp">
       <Filter>Source Files\Table</Filter>
     </ClCompile>
-    <ClCompile Include="src\Table\Cell\Cell.cpp">
-      <Filter>Source Files\Table\Cell</Filter>
-    </ClCompile>
     <ClCompile Include="src\Table\Cell\StringCell.cpp">
       <Filter>Source Files\Table\Cell</Filter>
     </ClCompile>
@@ -43,6 +43,9 @@
       <Filter>Source Files\Table\Cell</Filter>
     </ClCompile>
     <ClCompile Include="src\Table\Cell\DeteCell.cpp">
+      <Filter>Source Files\Table\Cell</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Table\Cell\ExprCell.cpp">
       <Filter>Source Files\Table\Cell</Filter>
     </ClCompile>
   </ItemGroup>
@@ -64,6 +67,15 @@
     </ClInclude>
     <ClInclude Include="src\Utility.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Table\Cell\ExprCell.h">
+      <Filter>Header Files\Table\Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ErrorCode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\StrongType\Int.h">
+      <Filter>Header Files\StrongType</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

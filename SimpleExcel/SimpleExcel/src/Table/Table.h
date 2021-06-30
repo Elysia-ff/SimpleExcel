@@ -40,6 +40,8 @@ private:
 
 	inline std::string rowToString(int row) const
 	{
+		assert(0 <= row && row < ROW_LIMIT);
+
 		return std::to_string(row + 1);
 	}
 

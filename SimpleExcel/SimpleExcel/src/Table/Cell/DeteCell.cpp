@@ -5,16 +5,10 @@
 
 #include "Utility.hpp"
 
-DateCell::DateCell(const std::string& _data)
-	: Cell(_data)
+DateCell::DateCell(const Table* _table, const std::string& data)
+	: Cell(_table)
 {
-	assert(Utility::IsDateForm(ToString()));
-}
-
-DateCell::DateCell(std::string&& _data)
-	: Cell(std::move(_data))
-{
-	assert(Utility::IsDateForm(ToString()));
+	parse(data);
 }
 
 Cell* DateCell::DeepCopy() const
@@ -22,16 +16,37 @@ Cell* DateCell::DeepCopy() const
 	return new DateCell(*this);
 }
 
-int DateCell::ToInt() const
+std::string DateCell::ToString() const
 {
-	const std::string& date = ToString();
+	std::string result;
+	result.reserve(10);
 
+	result.append(std::to_string(year));
+	result.append(1, '-');
+	result.append(std::to_string(month));
+	result.append(1, '-');
+	result.append(std::to_string(day));
+
+	return result;
+}
+
+Int DateCell::ToInt() const
+{
 	tm t{ 0, };
-	t.tm_year = atoi(date.c_str()) - 1900;
-	t.tm_mon = atoi(date.c_str() + 5) - 1;
-	t.tm_mday = atoi(date.c_str() + 8);
+	t.tm_year = year - 1900;
+	t.tm_mon = month - 1;
+	t.tm_mday = day;
 
 	time_t time = mktime(&t);
 
-	return static_cast<int>(time);
+	return Int{ static_cast<int>(time), EErrorCode::NONE };
+}
+
+void DateCell::parse(const std::string& str)
+{
+	assert(Utility::IsDateForm(str));
+
+	year = atoi(str.c_str());
+	month = atoi(str.c_str() + 5);
+	day = atoi(str.c_str() + 8);
 }

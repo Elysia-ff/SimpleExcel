@@ -7,9 +7,9 @@ class StringCell : public Cell
 public:
 	StringCell() = delete;
 
-	StringCell(const std::string& _data);
+	StringCell(const Table* _table, const std::string& _str);
 
-	StringCell(std::string&& _data);
+	StringCell(const Table* _table, std::string&& _str);
 
 	StringCell(const StringCell& source) = default;
 
@@ -23,5 +23,10 @@ public:
 
 	virtual Cell* DeepCopy() const override;
 
-	virtual int ToInt() const override;
+	virtual std::string ToString() const override;
+
+	virtual Int ToInt() const override;
+
+private:
+	std::string str;
 };
