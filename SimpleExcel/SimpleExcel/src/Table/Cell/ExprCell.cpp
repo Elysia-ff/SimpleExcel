@@ -151,7 +151,7 @@ std::string ExprCell::normalize(const std::string& str) const
 		}
 
 		char c = str[i];
-		if (str[i] >= 'a' && str[i] <= 'z')
+		if ('a' <= str[i] && str[i] <= 'z')
 		{
 			c = str[i] - 32;
 		}

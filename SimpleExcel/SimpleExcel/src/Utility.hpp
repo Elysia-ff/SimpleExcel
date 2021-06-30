@@ -74,12 +74,12 @@ public:
 
 	static bool IsAlpha(char c)
 	{
-		return c >= 'A' && c <= 'Z';
+		return 'A' <= c && c <= 'Z';
 	}
 
 	static bool IsNumber(char c)
 	{
-		return c >= '0' && c <= '9';
+		return '0' <= c && c <= '9';
 	}
 
 	static bool IsNumber(const std::string& str, int idx = 0)
