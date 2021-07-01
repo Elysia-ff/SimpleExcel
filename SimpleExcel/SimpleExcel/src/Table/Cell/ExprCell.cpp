@@ -6,24 +6,6 @@
 #include "Table/Table.h"
 #include "Utility.hpp"
 
-std::unordered_map<EErrorCode, std::string> ExprCell::ErrorStr
-{
-	{ EErrorCode::N_A, "N/A" },
-	{ EErrorCode::DIV_ZERO, "DIV/0" }
-};
-
-std::unordered_map<char, int> ExprCell::OperatorPriorities
-{
-	{ '(', 1 },
-	{ ')', 1 },
-
-	{ '+', 2 },
-	{ '-', 2 },
-
-	{ '*', 3 },
-	{ '/', 3 }
-};
-
 ExprCell::ExprCell(const Table* _table, const std::string& _expr)
 	: Cell(_table)
 	, expr(_expr)

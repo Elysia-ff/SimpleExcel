@@ -39,7 +39,21 @@ private:
 private:
 	std::string expr;
 
-	static std::unordered_map<EErrorCode, std::string> ErrorStr;
+	inline static std::unordered_map<EErrorCode, std::string> ErrorStr
+	{
+		{ EErrorCode::N_A, "N/A" },
+		{ EErrorCode::DIV_ZERO, "DIV/0" }
+	};
 
-	static std::unordered_map<char, int> OperatorPriorities;
+	inline static std::unordered_map<char, int> OperatorPriorities
+	{
+		{ '(', 1 },
+		{ ')', 1 },
+
+		{ '+', 2 },
+		{ '-', 2 },
+
+		{ '*', 3 },
+		{ '/', 3 }
+	};
 };
