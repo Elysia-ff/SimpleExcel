@@ -6,8 +6,8 @@ Table::Table(int row, int col)
 	: maxRow(row)
 	, maxCol(col)
 {
-	assert(0 < row && row < ROW_LIMIT);
-	assert(0 < col && col < COL_LIMIT);
+	assert(0 < row && row <= ROW_LIMIT);
+	assert(0 < col && col <= COL_LIMIT);
 
 	cells = new Cell * *[maxRow];
 	for (int i = 0; i < maxRow; i++)

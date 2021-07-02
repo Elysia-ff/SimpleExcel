@@ -3,7 +3,7 @@
 #include <cassert>
 #include <stack>
 
-#include "Table/Table.h"
+#include "Excel/Table/Table.h"
 #include "Utility.hpp"
 
 ExprCell::ExprCell(const Table* _table, const std::string& _expr)

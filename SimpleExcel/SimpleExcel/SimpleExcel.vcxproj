@@ -153,21 +153,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="src\Table\Cell\DeteCell.cpp" />
-    <ClCompile Include="src\Table\Cell\ExprCell.cpp" />
-    <ClCompile Include="src\Table\Cell\NumberCell.cpp" />
-    <ClCompile Include="src\Table\Cell\StringCell.cpp" />
-    <ClCompile Include="src\Table\Table.cpp" />
+    <ClCompile Include="src\Excel\Excel.cpp" />
+    <ClCompile Include="src\Excel\Table\Cell\DeteCell.cpp" />
+    <ClCompile Include="src\Excel\Table\Cell\ExprCell.cpp" />
+    <ClCompile Include="src\Excel\Table\Cell\NumberCell.cpp" />
+    <ClCompile Include="src\Excel\Table\Cell\StringCell.cpp" />
+    <ClCompile Include="src\Excel\Table\Table.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ErrorCode.h" />
+    <ClInclude Include="src\Excel\Excel.h" />
+    <ClInclude Include="src\Excel\Table\Cell\Cell.h" />
+    <ClInclude Include="src\Excel\Table\Cell\DateCell.h" />
+    <ClInclude Include="src\Excel\Table\Cell\ExprCell.h" />
+    <ClInclude Include="src\Excel\Table\Cell\NumberCell.h" />
+    <ClInclude Include="src\Excel\Table\Cell\StringCell.h" />
+    <ClInclude Include="src\Excel\Table\Table.h" />
     <ClInclude Include="src\StrongType\Int.h" />
-    <ClInclude Include="src\Table\Cell\Cell.h" />
-    <ClInclude Include="src\Table\Cell\DateCell.h" />
-    <ClInclude Include="src\Table\Cell\ExprCell.h" />
-    <ClInclude Include="src\Table\Cell\NumberCell.h" />
-    <ClInclude Include="src\Table\Cell\StringCell.h" />
-    <ClInclude Include="src\Table\Table.h" />
     <ClInclude Include="src\Utility.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

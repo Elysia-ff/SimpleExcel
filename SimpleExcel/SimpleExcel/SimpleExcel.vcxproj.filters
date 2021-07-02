@@ -13,69 +13,81 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\Table">
-      <UniqueIdentifier>{0b97c586-2e26-4747-bc11-c329e63cbca2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Table">
-      <UniqueIdentifier>{0f21ecd7-e032-4dd9-a658-456c3abf5dab}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Table\Cell">
-      <UniqueIdentifier>{1ac89598-8329-4ece-82c6-9b771fa8540a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Table\Cell">
-      <UniqueIdentifier>{ab4df9c0-8872-46ab-9c75-4c6d7c8ec252}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\StrongType">
       <UniqueIdentifier>{4d357f40-f167-49ac-a271-56709379638e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Excel">
+      <UniqueIdentifier>{6c13a533-54cb-49c1-9f9b-68c51c6dd5b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Excel\Table">
+      <UniqueIdentifier>{0b97c586-2e26-4747-bc11-c329e63cbca2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Excel\Table\Cell">
+      <UniqueIdentifier>{1ac89598-8329-4ece-82c6-9b771fa8540a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Excel">
+      <UniqueIdentifier>{00a0177e-d152-4efc-89dd-e3510b7c19b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Excel\Table">
+      <UniqueIdentifier>{0f21ecd7-e032-4dd9-a658-456c3abf5dab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Excel\Table\Cell">
+      <UniqueIdentifier>{ab4df9c0-8872-46ab-9c75-4c6d7c8ec252}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Table\Table.cpp">
-      <Filter>Source Files\Table</Filter>
+    <ClCompile Include="src\Excel\Excel.cpp">
+      <Filter>Source Files\Excel</Filter>
     </ClCompile>
-    <ClCompile Include="src\Table\Cell\StringCell.cpp">
-      <Filter>Source Files\Table\Cell</Filter>
+    <ClCompile Include="src\Excel\Table\Table.cpp">
+      <Filter>Source Files\Excel\Table</Filter>
     </ClCompile>
-    <ClCompile Include="src\Table\Cell\NumberCell.cpp">
-      <Filter>Source Files\Table\Cell</Filter>
+    <ClCompile Include="src\Excel\Table\Cell\DeteCell.cpp">
+      <Filter>Source Files\Excel\Table\Cell</Filter>
     </ClCompile>
-    <ClCompile Include="src\Table\Cell\DeteCell.cpp">
-      <Filter>Source Files\Table\Cell</Filter>
+    <ClCompile Include="src\Excel\Table\Cell\ExprCell.cpp">
+      <Filter>Source Files\Excel\Table\Cell</Filter>
     </ClCompile>
-    <ClCompile Include="src\Table\Cell\ExprCell.cpp">
-      <Filter>Source Files\Table\Cell</Filter>
+    <ClCompile Include="src\Excel\Table\Cell\NumberCell.cpp">
+      <Filter>Source Files\Excel\Table\Cell</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Excel\Table\Cell\StringCell.cpp">
+      <Filter>Source Files\Excel\Table\Cell</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Table\Table.h">
-      <Filter>Header Files\Table</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Table\Cell\Cell.h">
-      <Filter>Header Files\Table\Cell</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Table\Cell\StringCell.h">
-      <Filter>Header Files\Table\Cell</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Table\Cell\NumberCell.h">
-      <Filter>Header Files\Table\Cell</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Table\Cell\DateCell.h">
-      <Filter>Header Files\Table\Cell</Filter>
-    </ClInclude>
     <ClInclude Include="src\Utility.hpp">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Table\Cell\ExprCell.h">
-      <Filter>Header Files\Table\Cell</Filter>
     </ClInclude>
     <ClInclude Include="src\ErrorCode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\StrongType\Int.h">
       <Filter>Header Files\StrongType</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Excel.h">
+      <Filter>Header Files\Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Table\Table.h">
+      <Filter>Header Files\Excel\Table</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Table\Cell\Cell.h">
+      <Filter>Header Files\Excel\Table\Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Table\Cell\DateCell.h">
+      <Filter>Header Files\Excel\Table\Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Table\Cell\ExprCell.h">
+      <Filter>Header Files\Excel\Table\Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Table\Cell\NumberCell.h">
+      <Filter>Header Files\Excel\Table\Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Table\Cell\StringCell.h">
+      <Filter>Header Files\Excel\Table\Cell</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
