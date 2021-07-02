@@ -6,18 +6,18 @@ int main()
 {
 	Excel excel;
 
-	bool bSucceeded = true;
 	while (true)
 	{
 		system("cls");
 
 		excel.Print();
+		excel.PrintQueuedMessage();
 
-		if (!bSucceeded)
+		if (excel.HasInputError())
 		{
 			excel.HandleInvalidInput();
 		}
-		bSucceeded = excel.InputCommand();
+		excel.InputCommand();
 	}
 
 	return 0;

@@ -34,6 +34,12 @@
     <Filter Include="Source Files\Excel\Table\Cell">
       <UniqueIdentifier>{ab4df9c0-8872-46ab-9c75-4c6d7c8ec252}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Excel\Command">
+      <UniqueIdentifier>{2676ad64-ef54-4702-950a-59aa1302d3c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Excel\Command">
+      <UniqueIdentifier>{0bb1ee63-5e9b-4391-b246-78f86cc5d5dc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -56,6 +62,36 @@
     </ClCompile>
     <ClCompile Include="src\Excel\Table\Cell\StringCell.cpp">
       <Filter>Source Files\Excel\Table\Cell</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Excel\Command\CreateCommand.cpp">
+      <Filter>Source Files\Excel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Excel\Command\DeleteCommand.cpp">
+      <Filter>Source Files\Excel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Excel\Command\ExportCommand.cpp">
+      <Filter>Source Files\Excel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Excel\Command\ImportCommand.cpp">
+      <Filter>Source Files\Excel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Excel\Command\ResizeCommand.cpp">
+      <Filter>Source Files\Excel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Excel\Command\SetdCommand.cpp">
+      <Filter>Source Files\Excel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Excel\Command\SeteCommand.cpp">
+      <Filter>Source Files\Excel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Excel\Command\SetnCommand.cpp">
+      <Filter>Source Files\Excel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Excel\Command\SetsCommand.cpp">
+      <Filter>Source Files\Excel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Excel\Command\HelpCommand.cpp">
+      <Filter>Source Files\Excel\Command</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +124,39 @@
     </ClInclude>
     <ClInclude Include="src\Excel\Table\Cell\StringCell.h">
       <Filter>Header Files\Excel\Table\Cell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Command\CreateCommand.h">
+      <Filter>Header Files\Excel\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Command\ICommand.h">
+      <Filter>Header Files\Excel\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Command\DeleteCommand.h">
+      <Filter>Header Files\Excel\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Command\ExportCommand.h">
+      <Filter>Header Files\Excel\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Command\ImportCommand.h">
+      <Filter>Header Files\Excel\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Command\ResizeCommand.h">
+      <Filter>Header Files\Excel\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Command\SetdCommand.h">
+      <Filter>Header Files\Excel\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Command\SeteCommand.h">
+      <Filter>Header Files\Excel\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Command\SetnCommand.h">
+      <Filter>Header Files\Excel\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Command\SetsCommand.h">
+      <Filter>Header Files\Excel\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Excel\Command\HelpCommand.h">
+      <Filter>Header Files\Excel\Command</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

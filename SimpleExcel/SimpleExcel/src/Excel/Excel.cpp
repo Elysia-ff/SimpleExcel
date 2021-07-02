@@ -5,6 +5,8 @@
 
 #include "Table/Table.h"
 
+#include "Excel/Command/ICommand.h"
+
 Excel::Excel()
 	: table(nullptr)
 	, bHasInputError(false)
@@ -75,7 +77,7 @@ void Excel::Print() const
 	}
 }
 
-bool Excel::InputCommand()
+void Excel::InputCommand()
 {
 	assert(!bHasInputError && "Call HandleInvalidInput() first");
 
@@ -88,36 +90,15 @@ bool Excel::InputCommand()
 	std::string command;
 	
 	stream >> command;
-	if (command == "create")
+	auto iter = Commands.find(command);
+	if (iter != Commands.end())
 	{
-		int row;
-		int col;
-		stream >> row >> col;
-
-		if (!stream.fail() && isEmptyStream(stream) &&
-			0 < row && row <= Table::ROW_LIMIT &&
-			0 < col && col <= Table::COL_LIMIT)
-		{
-			if (table)
-			{
-				delete table;
-			}
-			
-			table = new Table(row, col);
-		}
-		else
-		{
-			bHasInputError = true;
-			return false;
-		}
+		bHasInputError = !((*iter).second->Execute(this, stream));
 	}
 	else
 	{
 		bHasInputError = true;
-		return false;
 	}
-
-	return true;
 }
 
 void Excel::HandleInvalidInput()
@@ -130,10 +111,18 @@ void Excel::HandleInvalidInput()
 	bHasInputError = false;
 }
 
-bool Excel::isEmptyStream(std::stringstream& ss) const
+void Excel::QueueMessage(const std::string& msg)
 {
-	std::string rest;
-	ss >> rest;
+	msgQueue.push(msg);
+}
 
-	return rest.size() == 0;
+void Excel::PrintQueuedMessage()
+{
+	while (msgQueue.size())
+	{
+		const std::string& msg = msgQueue.front();
+		std::cout << msg << std::endl;
+
+		msgQueue.pop();
+	}
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <sstream>
 
 class Utility
 {
@@ -119,5 +120,18 @@ public:
 		// TODO :: only works when 0 <= col <= 25 (A ~ Z) for now 
 		*outCol = cell[0] - 'A';
 		*outRow = atoi(cell.c_str() + 1) - 1;
+	}
+
+	static bool IsValidStream(std::stringstream& ss)
+	{
+		if (ss.fail())
+		{
+			return false;
+		}
+
+		std::string rest;
+		ss >> rest;
+
+		return rest.size() == 0;
 	}
 };

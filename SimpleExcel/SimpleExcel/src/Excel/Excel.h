@@ -1,11 +1,27 @@
 #pragma once
 
 #include <sstream>
+#include <unordered_map>
+#include <queue>
+
+#include "Excel/Command/CreateCommand.h"
+#include "Excel/Command/ResizeCommand.h"
+#include "Excel/Command/DeleteCommand.h"
+#include "Excel/Command/SetsCommand.h"
+#include "Excel/Command/SetnCommand.h"
+#include "Excel/Command/SetdCommand.h"
+#include "Excel/Command/SeteCommand.h"
+#include "Excel/Command/ImportCommand.h"
+#include "Excel/Command/ExportCommand.h"
+#include "Excel/Command/HelpCommand.h"
 
 class Table;
+class ICommand;
 
 class Excel
 {
+	friend class CreateCommand;
+
 public:
 	Excel();
 
@@ -21,15 +37,36 @@ public:
 
 	void Print() const;
 
-	bool InputCommand();
+	void InputCommand();
 
 	void HandleInvalidInput();
 
-private:
-	bool isEmptyStream(std::stringstream& ss) const;
+	inline bool HasInputError() const { return bHasInputError; }
+
+	void QueueMessage(const std::string& msg);
+
+	void PrintQueuedMessage();
 
 private:
 	Table* table;
 
 	bool bHasInputError;
+
+	std::queue<std::string> msgQueue;
+
+	inline static std::unordered_map<std::string, ICommand*> Commands
+	{
+		{ "create", new CreateCommand() },
+		{ "resize", new ResizeCommand() },
+		{ "delete", new DeleteCommand() },
+		{ "sets", new SetsCommand() },
+		{ "setn", new SetnCommand() },
+		{ "setd", new SetdCommand() },
+		{ "sete", new SeteCommand() },
+
+		{ "import", new ImportCommand() },
+		{ "export", new ExportCommand() },
+
+		{ "help", new HelpCommand() },
+	};
 };

@@ -153,6 +153,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="src\Excel\Command\CreateCommand.cpp" />
+    <ClCompile Include="src\Excel\Command\DeleteCommand.cpp" />
+    <ClCompile Include="src\Excel\Command\ExportCommand.cpp" />
+    <ClCompile Include="src\Excel\Command\HelpCommand.cpp" />
+    <ClCompile Include="src\Excel\Command\ImportCommand.cpp" />
+    <ClCompile Include="src\Excel\Command\ResizeCommand.cpp" />
+    <ClCompile Include="src\Excel\Command\SetdCommand.cpp" />
+    <ClCompile Include="src\Excel\Command\SeteCommand.cpp" />
+    <ClCompile Include="src\Excel\Command\SetnCommand.cpp" />
+    <ClCompile Include="src\Excel\Command\SetsCommand.cpp" />
     <ClCompile Include="src\Excel\Excel.cpp" />
     <ClCompile Include="src\Excel\Table\Cell\DeteCell.cpp" />
     <ClCompile Include="src\Excel\Table\Cell\ExprCell.cpp" />
@@ -162,6 +172,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\ErrorCode.h" />
+    <ClInclude Include="src\Excel\Command\CreateCommand.h" />
+    <ClInclude Include="src\Excel\Command\DeleteCommand.h" />
+    <ClInclude Include="src\Excel\Command\ExportCommand.h" />
+    <ClInclude Include="src\Excel\Command\HelpCommand.h" />
+    <ClInclude Include="src\Excel\Command\ICommand.h" />
+    <ClInclude Include="src\Excel\Command\ImportCommand.h" />
+    <ClInclude Include="src\Excel\Command\ResizeCommand.h" />
+    <ClInclude Include="src\Excel\Command\SetdCommand.h" />
+    <ClInclude Include="src\Excel\Command\SeteCommand.h" />
+    <ClInclude Include="src\Excel\Command\SetnCommand.h" />
+    <ClInclude Include="src\Excel\Command\SetsCommand.h" />
     <ClInclude Include="src\Excel\Excel.h" />
     <ClInclude Include="src\Excel\Table\Cell\Cell.h" />
     <ClInclude Include="src\Excel\Table\Cell\DateCell.h" />
