@@ -21,6 +21,12 @@ class ICommand;
 class Excel
 {
 	friend class CreateCommand;
+	friend class ResizeCommand;
+	friend class DeleteCommand;
+	friend class SetsCommand;
+	friend class SetnCommand;
+	friend class SetdCommand;
+	friend class SeteCommand;
 
 public:
 	Excel();

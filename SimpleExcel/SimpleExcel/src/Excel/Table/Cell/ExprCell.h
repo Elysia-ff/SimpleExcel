@@ -41,8 +41,8 @@ private:
 
 	inline static std::unordered_map<EErrorCode, std::string> ErrorStr
 	{
-		{ EErrorCode::N_A, "N/A" },
-		{ EErrorCode::DIV_ZERO, "DIV/0" }
+		{ EErrorCode::N_A, "!N/A" },
+		{ EErrorCode::DIV_ZERO, "!DIV/0" }
 	};
 
 	inline static std::unordered_map<char, int> OperatorPriorities

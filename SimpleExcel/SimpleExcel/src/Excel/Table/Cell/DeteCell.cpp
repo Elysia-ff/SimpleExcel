@@ -23,8 +23,16 @@ std::string DateCell::ToString() const
 
 	result.append(std::to_string(year));
 	result.append(1, '-');
+	if (month < 10)
+	{
+		result.append(1, '0');
+	}
 	result.append(std::to_string(month));
 	result.append(1, '-');
+	if (day < 10)
+	{
+		result.append(1, '0');
+	}
 	result.append(std::to_string(day));
 
 	return result;

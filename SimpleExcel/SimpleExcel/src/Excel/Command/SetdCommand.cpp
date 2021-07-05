@@ -1,6 +1,36 @@
 #include "SetdCommand.h"
 
+#include <cassert>
+
+#include "Excel/Excel.h"
+#include "Excel/Table/Table.h"
+#include "Excel/Table/Cell/DateCell.h"
+#include "Utility.hpp"
+
 bool SetdCommand::Execute(Excel* excel, std::stringstream& ss)
 {
-	return true;
+	assert(excel);
+
+	std::string cell;
+	std::string date;
+	ss >> cell >> date;
+
+	if (Utility::IsValidStream(ss) &&
+		Utility::IsDateForm(date))
+	{
+		int row;
+		int col;
+		Utility::ParseRowCol(cell, &row, &col);
+
+		if (excel->table &&
+			0 <= row && row < excel->table->GetMaxRow() &&
+			0 <= col && col < excel->table->GetMaxCol())
+		{
+			excel->table->Set(new DateCell(excel->table, date), row, col);
+
+			return true;
+		}
+	}
+
+	return false;
 }

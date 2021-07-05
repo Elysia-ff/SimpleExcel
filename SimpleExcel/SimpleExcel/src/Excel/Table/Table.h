@@ -35,6 +35,10 @@ public:
 
 	virtual std::string ToString() const;
 
+	inline int GetMaxRow() const { return maxRow; }
+
+	inline int GetMaxCol() const { return maxCol; }
+
 private:
 	void releaseMemory();
 

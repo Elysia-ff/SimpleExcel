@@ -50,6 +50,12 @@ Int ExprCell::ToInt() const
 			int col;
 			Utility::ParseRowCol(str, &row, &col);
 
+			if (!(0 <= row && row < table->GetMaxRow() &&
+				0 <= col && col < table->GetMaxCol()))
+			{
+				return Int{ 0, EErrorCode::N_A };
+			}
+
 			Cell* cell = table->Get(row, col);
 			if (cell != nullptr)
 			{
