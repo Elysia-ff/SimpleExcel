@@ -27,6 +27,7 @@ class Excel
 	friend class SetnCommand;
 	friend class SetdCommand;
 	friend class SeteCommand;
+	friend class ExportCommand;
 
 public:
 	Excel();

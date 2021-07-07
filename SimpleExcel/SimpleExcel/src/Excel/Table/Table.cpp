@@ -95,7 +95,6 @@ Table& Table::operator=(Table&& source) noexcept
 
 void Table::Set(Cell* cell, int row, int col)
 {
-	assert(cells);
 	assert(0 <= row && row < maxRow);
 	assert(0 <= col && col < maxCol);
 
