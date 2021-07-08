@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <iostream>
 
 #include "StrongType/Int.h"
 
@@ -9,9 +10,18 @@ class Table;
 class Cell
 {
 public:
+	enum class Type : unsigned char
+	{
+		String = 's',
+		Number = 'n',
+		Date = 'd',
+		Expr = 'e',
+	};
+
+public:
 	Cell() = delete;
 
-	Cell(const Table* _table) : table(_table) {}
+	Cell(const Table* _table);
 
 	Cell(const Cell& source) = default;
 
@@ -29,6 +39,12 @@ public:
 
 	virtual Int ToInt() const = 0;
 
+	inline virtual Type GetType() const = 0;
+
+	inline virtual std::string GetPlainText() const = 0;
+
 protected:
 	const Table* table;
 };
+
+std::istream& operator>>(std::istream& is, Cell::Type& cellType);

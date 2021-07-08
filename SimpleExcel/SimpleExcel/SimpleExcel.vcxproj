@@ -164,6 +164,7 @@
     <ClCompile Include="src\Excel\Command\SetnCommand.cpp" />
     <ClCompile Include="src\Excel\Command\SetsCommand.cpp" />
     <ClCompile Include="src\Excel\Excel.cpp" />
+    <ClCompile Include="src\Excel\Table\Cell\Cell.cpp" />
     <ClCompile Include="src\Excel\Table\Cell\DeteCell.cpp" />
     <ClCompile Include="src\Excel\Table\Cell\ExprCell.cpp" />
     <ClCompile Include="src\Excel\Table\Cell\NumberCell.cpp" />

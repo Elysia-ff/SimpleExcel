@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cassert>
 #include <string>
 #include <sstream>
 
@@ -133,5 +134,26 @@ public:
 		ss >> rest;
 
 		return rest.size() == 0;
+	}
+
+	static std::string GetExtension(const std::string path)
+	{
+		std::string result;
+
+		for (auto iter = path.rbegin(); iter != path.rend(); ++iter)
+		{
+			if (*iter == '/')
+			{
+				break;
+			}
+
+			if (*iter == '.')
+			{
+				size_t len = iter - path.rbegin();
+				result.append(path.end() - len, path.end());
+			}
+		}
+
+		return result;
 	}
 };

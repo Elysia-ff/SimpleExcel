@@ -27,6 +27,7 @@ class Excel
 	friend class SetnCommand;
 	friend class SetdCommand;
 	friend class SeteCommand;
+	friend class ImportCommand;
 	friend class ExportCommand;
 
 public:
@@ -53,6 +54,9 @@ public:
 	void QueueMessage(const std::string& msg);
 
 	void PrintQueuedMessage();
+
+public:
+	inline static const std::string VERSION = "1.0";
 
 private:
 	Table* table;

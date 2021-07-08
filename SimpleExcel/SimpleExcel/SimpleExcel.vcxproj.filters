@@ -93,6 +93,9 @@
     <ClCompile Include="src\Excel\Command\HelpCommand.cpp">
       <Filter>Source Files\Excel\Command</Filter>
     </ClCompile>
+    <ClCompile Include="src\Excel\Table\Cell\Cell.cpp">
+      <Filter>Source Files\Excel\Table\Cell</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Utility.hpp">

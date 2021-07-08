@@ -25,6 +25,10 @@ public:
 
 	virtual Int ToInt() const override;
 
+	inline virtual Type GetType() const override { return Type::Number; }
+
+	inline virtual std::string GetPlainText() const override { return ToString(); }
+
 private:
 	int num;
 };

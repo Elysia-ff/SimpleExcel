@@ -28,6 +28,10 @@ public:
 
 	virtual Int ToInt() const override;
 
+	inline virtual Type GetType() const override { return Type::Expr; }
+
+	inline virtual std::string GetPlainText() const override { return expr; }
+
 private:
 	// remove white characters, capitalize, replace '{', '[' to '(' 
 	std::string normalize(const std::string& str) const;

@@ -24,6 +24,10 @@ public:
 	virtual std::string ToString() const override;
 
 	virtual Int ToInt() const override;
+	
+	inline virtual Type GetType() const override { return Type::Date; }
+
+	inline virtual std::string GetPlainText() const override { return ToString(); }
 
 private:
 	void parse(const std::string& str);
