@@ -116,6 +116,14 @@ void Excel::QueueMessage(const std::string& msg)
 	msgQueue.push(msg);
 }
 
+void Excel::QueueMessages(const std::vector<std::string>& msgs)
+{
+	for (const std::string& m : msgs)
+	{
+		msgQueue.push(m);
+	}
+}
+
 void Excel::PrintQueuedMessage()
 {
 	while (msgQueue.size())

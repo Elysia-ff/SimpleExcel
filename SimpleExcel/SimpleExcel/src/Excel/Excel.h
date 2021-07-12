@@ -3,6 +3,7 @@
 #include <sstream>
 #include <unordered_map>
 #include <queue>
+#include <vector>
 
 #include "Excel/Command/CreateCommand.h"
 #include "Excel/Command/ResizeCommand.h"
@@ -53,6 +54,8 @@ public:
 
 	void QueueMessage(const std::string& msg);
 
+	void QueueMessages(const std::vector<std::string>& msgs);
+
 	void PrintQueuedMessage();
 
 public:
@@ -65,7 +68,7 @@ private:
 
 	std::queue<std::string> msgQueue;
 
-	inline static std::unordered_map<std::string, ICommand*> Commands
+	inline static const std::unordered_map<std::string, ICommand*> Commands
 	{
 		{ "create", new CreateCommand() },
 		{ "resize", new ResizeCommand() },
