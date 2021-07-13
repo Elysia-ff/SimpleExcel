@@ -103,6 +103,12 @@ void Table::Set(Cell* cell, int row, int col)
 		delete cells[row][col];
 	}
 
+	if (cell != nullptr)
+	{
+		cell->tableRow = row;
+		cell->tableCol = col;
+	}
+
 	cells[row][col] = cell;
 }
 

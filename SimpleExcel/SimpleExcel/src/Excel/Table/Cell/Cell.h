@@ -9,6 +9,8 @@ class Table;
 
 class Cell
 {
+	friend class Table;
+
 public:
 	enum class Type : unsigned char
 	{
@@ -45,6 +47,10 @@ public:
 
 protected:
 	const Table* table;
+
+	int tableRow;
+
+	int tableCol;
 };
 
 std::istream& operator>>(std::istream& is, Cell::Type& cellType);

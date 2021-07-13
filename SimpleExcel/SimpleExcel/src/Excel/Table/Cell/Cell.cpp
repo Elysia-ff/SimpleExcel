@@ -2,6 +2,8 @@
 
 Cell::Cell(const Table* _table)
 	: table(_table)
+	, tableRow(-1)
+	, tableCol(-1)
 {
 }
 
